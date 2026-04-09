@@ -43,7 +43,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <Image
-            src="/PHOTO.jpeg"
+            src="/PHOTO.jpg"
             alt="Profile"
             width={300}
             height={600}
