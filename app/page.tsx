@@ -73,7 +73,7 @@ export default function Home() {
               className="bg-gray-900 p-6 rounded-2xl shadow-lg"
             >
               <Image
-                src={`/project${project}.png`}
+                src="/image.png"
                 alt="Project"
                 width={400}
                 height={250}
