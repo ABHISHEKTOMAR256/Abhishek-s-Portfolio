@@ -61,32 +61,49 @@ export default function Home() {
         </p>
       </section>
 
-      {/* PROJECTS SECTION */}
-      <section id="projects" className="py-20">
-        <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
+     {/* PROJECTS SECTION */}
+<section id="projects" className="py-20">
+  <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((project) => (
-            <motion.div
-              key={project}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900 p-6 rounded-2xl shadow-lg"
-            >
-              <Image
-                src="/image.png"
-                alt="Project"
-                width={400}
-                height={250}
-                className="rounded-xl"
-              />
-              <h3 className="text-xl font-semibold mt-4">Project {project}</h3>
-              <p className="text-gray-400 mt-2">
-                Short description of your project showcasing your skills.
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+  <div className="grid md:grid-cols-3 gap-8">
+    {[
+      {
+        id: 1,
+        title: "Project 1",
+        description: "I have made a quiz application whith the help of html,css,and javascript.",
+        image: "/image.png",
+      },
+      {
+        id: 2,
+        title: "Project 2",
+        description: "I have made a Citizen Portal which is a web application that allows citizens to access government services and information online.",
+        image: "/image1.png",
+      },
+      {
+        id: 3,
+        title: "Project 3",
+        description: "I have made a app for validating requirements of a project and also for tracking the progress of the project.",
+        image: "/image2.png",
+      },
+    ].map((project) => (
+      <motion.div
+        key={project.id}
+        whileHover={{ scale: 1.05 }}
+        className="bg-gray-900 p-6 rounded-2xl shadow-lg"
+      >
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={300}
+          height={200}
+          className="rounded-xl w-full object-cover"
+        />
+        <h3 className="text-xl font-semibold mt-4">{project.title}</h3>
+        <p className="text-gray-400 mt-2">{project.description}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
       {/* SKILLS SECTION */}
       <section className="py-20 text-center">
@@ -110,10 +127,30 @@ export default function Home() {
         <p className="text-gray-400 mb-6">Let's build something amazing together.</p>
 
         <a
-          href="mailto:your@email.com"
+          href="mailto:abhitomar1608@email.com"
+          target="_blank"
+          rel="noopener noreferrer"
+
           className="bg-blue-500 px-6 py-3 rounded-xl hover:bg-blue-600 transition"
         >
-          Say Hello
+          EMAIL        
+        </a>
+        <a
+          href="https://www.linkedin.com/in/abhishek-tomar-625202294/"
+          target="_blank"
+          rel="noopener noreferrer"
+
+          className="bg-blue-500 px-6 py-3 rounded-xl hover:bg-blue-600 transition"
+                >
+            LinkedIn
+        </a>
+        <a
+          href="https://chat.whatsapp.com/Fkp22BmW4UkKTD3pw1pjeM?mode=gi_t"
+           target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-500 px-6 py-3 rounded-xl hover:bg-blue-600 transition"
+                >
+          Whatsapp
         </a>
       </section>
 
