@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
             <a href="#contact" className="border border-gray-500 px-6 py-2 rounded-xl hover:bg-gray-800 transition">
               Contact Me
             </a>
+            
+            <Link href="/certifications" className="border border-gray-500 px-6 py-2 rounded-xl hover:bg-gray-800 transition">
+               Certifications
+            </Link>
           </div>
 
           <div className="flex gap-4 mt-6">
