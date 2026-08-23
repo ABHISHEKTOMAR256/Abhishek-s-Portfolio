@@ -23,7 +23,7 @@ export default function Home() {
             B.Tech CSE Student at LPU | AI/ML Enthusiast | Full-Stack Developer | Building Intelligent and Scalable Applications.
           </p>
 
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-wrap gap-x-4 gap-y-6 mt-6">
             <a href="#projects" className="bg-blue-500 px-6 py-2 rounded-xl hover:bg-blue-600 transition">
               View Work
             </a>
