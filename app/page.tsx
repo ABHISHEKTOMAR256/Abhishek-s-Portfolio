@@ -23,33 +23,45 @@ export default function Home() {
             B.Tech CSE Student at LPU | AI/ML Enthusiast | Full-Stack Developer | Building Intelligent and Scalable Applications.
           </p>
 
-          <div className="flex flex-wrap gap-x-4 gap-y-6 mt-6">
-            <a href="#projects" className="bg-blue-500 px-6 py-2 rounded-xl hover:bg-blue-600 transition">
-              View Work
-            </a>
-            <a href="#contact" className="border border-gray-500 px-6 py-2 rounded-xl hover:bg-gray-800 transition">
-              Contact Me
-            </a>
-            
-            <Link href="/certifications" className="border border-gray-500 px-6 py-2 rounded-xl hover:bg-gray-800 transition">
-               Certifications
-            </Link>
-          </div>
-          <a
-  href="/resume.pdf"
-  target="_blank"
-  className="border border-gray-500 px-6 py-2 rounded-xl"
->
-  View CV
-</a>
+         <div className="flex flex-wrap items-center gap-4 mt-8">
+  <a
+    href="#projects"
+    className="px-9 py-4 rounded-xl bg-blue-500 text-white text-lg font-medium hover:bg-blue-600 transition"
+  >
+    View Work
+  </a>
 
-<a
-  href="/resume.pdf"
-  download
-  className="bg-green-500 px-6 py-2 rounded-xl"
->
-  Download CV
-</a>
+  <a
+    href="#contact"
+    className="px-9 py-4 rounded-xl border border-gray-500 text-white text-lg font-medium hover:bg-white hover:text-black transition"
+  >
+    Contact Me
+  </a>
+
+  <a
+    href="#certifications"
+    className="px-9 py-4 rounded-xl border border-gray-500 text-white text-lg font-medium hover:bg-white hover:text-black transition"
+  >
+    Certifications
+  </a>
+
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-9 py-4 rounded-xl border border-gray-500 text-white text-lg font-medium hover:bg-white hover:text-black transition"
+  >
+    View CV
+  </a>
+
+  <a
+    href="/resume.pdf"
+    download
+    className="px-9 py-4 rounded-xl bg-green-500 text-white text-lg font-medium hover:bg-green-600 transition"
+  >
+    Download CV
+  </a>
+</div>
 
           <div className="flex gap-4 mt-6">
             
