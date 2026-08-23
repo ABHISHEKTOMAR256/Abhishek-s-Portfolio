@@ -20,7 +20,7 @@ export default function Home() {
             Hi, I'm <span className="text-blue-500">Abhishek Tomar</span>
           </h1>
           <p className="mt-4 text-lg text-gray-400">
-            A passionate developer building modern, responsive, and high-performance web applications.
+            B.Tech CSE Student at LPU | AI/ML Enthusiast | Full-Stack Developer | Building Intelligent and Scalable Applications.
           </p>
 
           <div className="flex gap-4 mt-6">
@@ -35,6 +35,21 @@ export default function Home() {
                Certifications
             </Link>
           </div>
+          <a
+  href="/resume.pdf"
+  target="_blank"
+  className="border border-gray-500 px-6 py-2 rounded-xl"
+>
+  View CV
+</a>
+
+<a
+  href="/resume.pdf"
+  download
+  className="bg-green-500 px-6 py-2 rounded-xl"
+>
+  Download CV
+</a>
 
           <div className="flex gap-4 mt-6">
             
@@ -57,12 +72,14 @@ export default function Home() {
         </motion.div>
       </section>
 
+
       {/* ABOUT SECTION */}
       <section className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          I'm a student and developer who loves creating creative and user-friendly applications.
-          I enjoy solving real-world problems using technology and constantly improving my skills.
+          I am a B.Tech Computer Science student at Lovely Professional University with interests in AI/ML, Full-Stack Development, IoT, and Renewable Energy Systems.
+
+I enjoy building real-world solutions such as SUVIDHA, AI-assisted requirement validation tools, and smart energy harvesting systems.
         </p>
       </section>
 
@@ -74,19 +91,19 @@ export default function Home() {
     {[
       {
         id: 1,
-        title: "Project 1",
+        title: "SUVIDHA – Smart Urban Digital Helpdesk",
         description: "I have made a quiz application whith the help of html,css,and javascript.",
         image: "/image.png",
       },
       {
         id: 2,
-        title: "Project 2",
+        title: "AI Requirement Validator",
         description: "I have made a Citizen Portal which is a web application that allows citizens to access government services and information online.",
         image: "/image1.png",
       },
       {
         id: 3,
-        title: "Project 3",
+        title: "Interactive Quiz Application",
         description: "I have made a app for validating requirements of a project and also for tracking the progress of the project.",
         image: "/image2.png",
       },
@@ -158,6 +175,7 @@ export default function Home() {
           Whatsapp
         </a>
       </section>
+      
 
       {/* FOOTER */}
       <footer className="text-center py-10 text-gray-500">
