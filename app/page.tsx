@@ -120,6 +120,43 @@ I enjoy building real-world solutions such as SUVIDHA, AI-assisted requirement v
         description: "I have made a app for validating requirements of a project and also for tracking the progress of the project.",
         image: "/image2.png",
       },
+      {
+        id: 4,
+        title: "Pawmarg Trust Api with Razorpay.",
+        description: "I have develope this website for the NGO.",
+        image: "/image3.png",
+      },
+      {
+        id: 5,
+        title: "Shopping Website api with Whatsapp",
+        description: "I have develope this website for my Client to give Shopping website links to their customer to increase the sale.",
+        image: "/image4.png",
+      },
+      {
+        id: 6,
+        title: "Twin Vision",
+        description: "Developed this website for taking client and to show our work to them.",
+        image: "/image5.png",
+      },
+      {
+        id: 5,
+        title: "Shopping Website api with Whatsapp",
+        description: "I have develope this website for my Client to give Shopping website links to their customer to increase the sale.",
+        image: "/image4.png",
+      },
+      {
+        id: 6,
+        title: "Twin Vision",
+        description: "Developed this website for taking client and to show our work to them.",
+        image: "/image5.png",
+      },
+      {
+      id: 7,
+        title: "Student Survival (Ongoing)",
+        description: "Developed For Student to check their attendence and Placement requirement for specific companies like Amazon,Flipkart,TCS etc.",
+        image: "/image5.png",
+      },
+      
     ].map((project) => (
       <motion.div
         key={project.id}
