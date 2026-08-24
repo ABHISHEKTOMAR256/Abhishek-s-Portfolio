@@ -138,18 +138,7 @@ I enjoy building real-world solutions such as SUVIDHA, AI-assisted requirement v
         description: "Developed this website for taking client and to show our work to them.",
         image: "/image5.png",
       },
-      {
-        id: 5,
-        title: "Shopping Website api with Whatsapp",
-        description: "I have develope this website for my Client to give Shopping website links to their customer to increase the sale.",
-        image: "/image4.png",
-      },
-      {
-        id: 6,
-        title: "Twin Vision",
-        description: "Developed this website for taking client and to show our work to them.",
-        image: "/image5.png",
-      },
+      
       {
       id: 7,
         title: "Student Survival (Ongoing)",
