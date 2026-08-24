@@ -141,9 +141,9 @@ I enjoy building real-world solutions such as SUVIDHA, AI-assisted requirement v
       
       {
       id: 7,
-        title: "Student Survival (Ongoing)",
+        title: "Student Survival (*Ongoing*)",
         description: "Developed For Student to check their attendence and Placement requirement for specific companies like Amazon,Flipkart,TCS etc.",
-        image: "/image5.png",
+        image: "/image6.png",
       },
       
     ].map((project) => (
