@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
     <main className="bg-black text-white min-h-screen px-6 md:px-16">
@@ -38,12 +39,12 @@ export default function Home() {
     Contact Me
   </a>
 
-  <a
-    href="#certifications"
-    className="px-9 py-4 rounded-xl border border-gray-500 text-white text-lg font-medium hover:bg-white hover:text-black transition"
-  >
-    Certifications
-  </a>
+  <Link
+  href="/certifications"
+  className="px-9 py-4 rounded-xl border border-gray-500 text-white text-lg font-medium hover:bg-white hover:text-black transition"
+>
+  Certifications
+</Link>
 
   <a
     href="/resume.pdf"
