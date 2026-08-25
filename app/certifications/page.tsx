@@ -73,7 +73,6 @@ const certifications: Certification[] = [
     date: "DEC 2025",
     credentialId: "CERT-ID-006",
     skills: ["Python", "Programming Fundamentals"],
-    color: "#6366F1",
     image: "/python.jpeg",
     verifyUrl: "#",
   },
@@ -90,8 +89,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -208,33 +206,43 @@ export default function CertificationsPage() {
           <motion.div
             key={cert.id}
             variants={cardVariants}
-
             whileHover={{ scale: 1.02 }}
             onMouseEnter={() => setHoveredId(cert.id)}
             onMouseLeave={() => setHoveredId(null)}
             style={{
               background: "#0a0a0a",
-
               border: `1px solid ${hoveredId === cert.id ? "#ffffff" : "#1f1f1f"}`,
               borderRadius: "16px",
               overflow: "hidden",
               transition: "all 0.3s ease",
             }}
           >
-
-
-
-
             <div style={{ height: "3px", background: "#3a3a3a" }} />
 
-            <div style={{ width: "100%", height: "180px", position: "relative" }}>
-              <Image
-                src={cert.image}
-                alt={cert.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: "cover" }}
-              />
+            <div style={{ width: "100%", height: "180px", position: "relative", background: "#111111" }}>
+              {cert.image ? (
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                    height: "100%",
+                    color: "#8a8a8a",
+                    background: "linear-gradient(135deg, #111111 0%, #1d1d1d 100%)",
+                  }}
+                >
+                  No image
+                </div>
+              )}
             </div>
 
             <div style={{ padding: "20px" }}>

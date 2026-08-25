@@ -175,24 +175,6 @@ export default function Home() {
   </motion.div>
 
 </section>
-  {/* Blue Shape Behind */}
-  <div className="absolute left-0 top-24 w-40 h-32 bg-blue-500 rounded-[40%] blur-sm opacity-80 z-0" />
-
-  {/* Tilted Border Frame */}
-  <div className="absolute inset-0 rotate-[-4deg] border border-blue-500 rounded-[24px] z-10" />
-
-  {/* Image */}
-  <div className="absolute inset-0 z-20 overflow-hidden rounded-[24px]">
-    <Image
-      src="/PHOTO.jpg"
-      alt="Profile"
-      fill
-      className="object-cover"
-    />
-  </div>
-
-</div>
-      </section>
 
       {/* ABOUT SECTION */}
       <section className="py-20 text-center border-t border-neutral-900">
