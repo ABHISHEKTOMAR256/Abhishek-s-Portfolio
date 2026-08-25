@@ -11,21 +11,18 @@ interface Certification {
   date: string;
   credentialId: string;
   skills: string[];
-  color: string;
   image: string;
   verifyUrl: string;
 }
 
-// =============================================
 const certifications: Certification[] = [
   {
     id: 1,
     title: "Artificial Intelligence Certification",
-    issuer: "Intel colab with chandigarh university",
+    issuer: "Intel collab with Chandigarh University",
     date: "AUG 2025",
     credentialId: "CERT-ID-001",
     skills: ["Artificial Intelligence", "Machine Learning"],
-    color: "#3B82F6",
     image: "/ai.jpeg",
     verifyUrl: "#",
   },
@@ -36,7 +33,6 @@ const certifications: Certification[] = [
     date: "DEC 2025",
     credentialId: "CERT-ID-002",
     skills: ["HTML", "CSS"],
-    color: "#8B5CF6",
     image: "/html.jpeg",
     verifyUrl: "#",
   },
@@ -47,7 +43,6 @@ const certifications: Certification[] = [
     date: "NOV 2025",
     credentialId: "CERT-ID-003",
     skills: ["Kaggle Tools", "Data Analysis"],
-    color: "#10B981",
     image: "/kaggle.jpeg",
     verifyUrl: "#",
   },
@@ -58,18 +53,16 @@ const certifications: Certification[] = [
     date: "MARCH 2026",
     credentialId: "CERT-ID-004",
     skills: ["Data Science", "Python"],
-    color: "#F59E0B",
     image: "/ds.jpeg",
     verifyUrl: "#",
   },
   {
     id: 5,
     title: "ECE Exhibition Workshop",
-    issuer: "LOVELY PROFESSIONAL UNIVERSITY",
+    issuer: "Lovely Professional University",
     date: "NOV 2025",
     credentialId: "CERT-ID-005",
     skills: ["Arduino", "ECE Projects"],
-    color: "#EF4444",
     image: "/ece.jpeg",
     verifyUrl: "#",
   },
@@ -85,16 +78,10 @@ const certifications: Certification[] = [
     verifyUrl: "#",
   },
 ];
-// =============================================
 
-// Parent container (stagger animation)
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 // Card animation
@@ -103,20 +90,21 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 export default function CertificationsPage() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState<string>("All");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-  const allSkills = ["All", ...Array.from(new Set(certifications.flatMap((c) => c.skills)))];
+  const allSkills: string[] = [
+    "All",
+    ...Array.from(new Set(certifications.flatMap((c) => c.skills))),
+  ];
 
-  const filtered =
+  const filtered: Certification[] =
     filter === "All"
       ? certifications
       : certifications.filter((c) => c.skills.includes(filter));
@@ -127,21 +115,54 @@ export default function CertificationsPage() {
         background: "#000000",
         minHeight: "100vh",
         padding: "80px 24px",
-        color: "#ffffff",
+
+        color: "#e6e6e6",
         fontFamily: "'Segoe UI', system-ui, sans-serif",
       }}
     >
+      {/* Big name, front and center, different font */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ textAlign: "center", marginBottom: "16px" }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-mono, monospace)",
+            fontSize: "clamp(1.8rem, 4vw, 3rem)",
+            fontWeight: 700,
+            letterSpacing: "-0.02em",
+            color: "#ffffff",
+          }}
+        >
+          Abhishek Tomar
+        </h2>
+        <div
+          style={{
+            height: "1px",
+            width: "80px",
+            background: "#3a3a3a",
+            margin: "16px auto 0",
+          }}
+        />
+      </motion.div>
+
+
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+
+        transition={{ duration: 0.6, delay: 0.1 }}
         style={{ textAlign: "center", marginBottom: "48px" }}
       >
-        <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: "700" }}>
-          My <span style={{ color: "#3B82F6" }}>Certifications</span>
+        <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, color: "#ffffff" }}>
+
+          My Certifications
         </h1>
-        <p style={{ color: "#9CA3AF" }}>
+
+        <p style={{ color: "#8a8a8a" }}>
           Verified credentials earned across various platforms.
         </p>
       </motion.div>
@@ -151,14 +172,16 @@ export default function CertificationsPage() {
         {allSkills.map((skill) => (
           <button
             key={skill}
+            type="button"
             onClick={() => setFilter(skill)}
             style={{
               padding: "8px 18px",
               borderRadius: "999px",
-              border: filter === skill ? "2px solid #3B82F6" : "1px solid #374151",
-              background: filter === skill ? "#1D4ED8" : "transparent",
-              color: filter === skill ? "#ffffff" : "#9CA3AF",
+              border: filter === skill ? "1px solid #ffffff" : "1px solid #2a2a2a",
+              background: filter === skill ? "#1a1a1a" : "transparent",
+              color: filter === skill ? "#ffffff" : "#8a8a8a",
               cursor: "pointer",
+              transition: "all 0.2s ease",
             }}
           >
             {skill}
@@ -166,7 +189,8 @@ export default function CertificationsPage() {
         ))}
       </div>
 
-      {/* Cards Grid with stagger animation */}
+
+      {/* Cards Grid */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -183,42 +207,73 @@ export default function CertificationsPage() {
         {filtered.map((cert) => (
           <motion.div
             key={cert.id}
-            
-            whileHover={{ scale: 1.03 }}
+            variants={cardVariants}
+
+            whileHover={{ scale: 1.02 }}
             onMouseEnter={() => setHoveredId(cert.id)}
             onMouseLeave={() => setHoveredId(null)}
             style={{
-              background: "#0D1117",
-              border: `1px solid ${hoveredId === cert.id ? cert.color : "#1F2937"}`,
+              background: "#0a0a0a",
+
+              border: `1px solid ${hoveredId === cert.id ? "#ffffff" : "#1f1f1f"}`,
               borderRadius: "16px",
               overflow: "hidden",
               transition: "all 0.3s ease",
             }}
           >
-            <div style={{ height: "3px", background: cert.color }} />
+
+
+
+
+            <div style={{ height: "3px", background: "#3a3a3a" }} />
 
             <div style={{ width: "100%", height: "180px", position: "relative" }}>
-              <Image src={cert.image} alt={cert.title} fill style={{ objectFit: "cover" }} />
+              <Image
+                src={cert.image}
+                alt={cert.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: "cover" }}
+              />
             </div>
 
             <div style={{ padding: "20px" }}>
               <span style={{ fontSize: "0.75rem", color: "#6B7280" }}>{cert.date}</span>
 
-              <h3 style={{ margin: "10px 0" }}>{cert.title}</h3>
 
-              <p style={{ color: cert.color }}>{cert.issuer}</p>
+              <h3 style={{ margin: "10px 0", color: "#ffffff" }}>{cert.title}</h3>
+
+
+              <p style={{ color: "#b0b0b0" }}>{cert.issuer}</p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", margin: "12px 0" }}>
                 {cert.skills.map((skill) => (
-                  <span key={skill} style={{ fontSize: "0.75rem", background: "#1F2937", padding: "4px 8px", borderRadius: "6px" }}>
+                  <span
+                    key={skill}
+                    style={{
+                      fontSize: "0.75rem",
+                      background: "#1a1a1a",
+                      color: "#c9c9c9",
+                      padding: "4px 8px",
+                      borderRadius: "6px",
+                    }}
+
+>
                     {skill}
                   </span>
                 ))}
               </div>
 
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+
+              <div style={{ display: "flex", justifyContent: "space-between", color: "#8a8a8a" }}>
                 <span style={{ fontSize: "0.7rem" }}>ID: {cert.credentialId}</span>
-                <a href={cert.verifyUrl} target="_blank" style={{ color: cert.color }}>
+
+                <a
+                  href={cert.verifyUrl || "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "#ffffff" }}
+                >
                   Verify ↗
                 </a>
               </div>
